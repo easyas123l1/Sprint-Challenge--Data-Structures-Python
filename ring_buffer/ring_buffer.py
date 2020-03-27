@@ -50,7 +50,12 @@ class ArrayRingBuffer:
         self.current = 0
 
     def append(self, item):
-        pass
+        # Update the value in the "current" index
+        self.storage[self.current] = item
+        self.current += 1
+        # Reset the current index when you reach the end
+        if self.current == self.capacity:
+            self.current = 0
 
     def get(self):
         pass
