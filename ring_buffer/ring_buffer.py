@@ -32,7 +32,7 @@ class RingBuffer:
         current_node = self.storage.tail
 
         # Iterate through the DLL
-        for node in range(self.storage.length):
+        for _ in range(self.storage.length):
             # Add the current value and then go to the previous node
             list_buffer_contents.append(current_node.value)
             if current_node.prev:
