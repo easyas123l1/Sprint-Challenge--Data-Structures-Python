@@ -28,7 +28,15 @@ class RingBuffer:
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
+        # Start at the tail
+        current_node = self.storage.tail
+
+        # Iterate through the DLL
+        for node in range(self.storage.length):
+            # Add the current value and then go to the previous node
+            list_buffer_contents.append(current_node.value)
+            if current_node.prev:
+                current_node = current_node.prev
 
         return list_buffer_contents
 
