@@ -58,4 +58,5 @@ class ArrayRingBuffer:
             self.current = 0
 
     def get(self):
-        pass
+        # Filter out None values
+        return [item for item in self.storage if item is not None]
